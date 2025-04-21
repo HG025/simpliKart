@@ -1,0 +1,10 @@
+
+
+npm install @popperjs/core
+
+npm install @ng-bootstrap/ng-bootstrap
+
+
+
+ng cache clean      ==      for cache cleaning
+

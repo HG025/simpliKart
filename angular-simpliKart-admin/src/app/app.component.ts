@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
   imports: [RouterOutlet, NgbNavModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  // providers: [NgbNavConfig] 
+  providers: [NgbNavConfig] 
 })
 export class AppComponent {
   title = 'angular-simpliKart-admin';
