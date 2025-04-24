@@ -1,83 +1,74 @@
+<div class="container w-100">
+   <!-- <div class="card" style="visibility: hidden;"> 
+   </div> -->
 
-<section class="log-in-section section-b-space">
-    <div class="container w-100">
-       <div class="row">
-          <div class="col-xl-5 col-lg-6 m-auto">
-             <!-- <app-alert></app-alert> -->
-             <div class="log-in-box">
-                <div class="log-in-title">
-                   <img src="assets\images\simpliKart.png" class="img-fluid logo-img" alt="">
-                   <h4>{{ 'log_in_your_account' | translate }}</h4>
-                   <!-- <h4>{{ 'log_in_your_account' | translate}} </h4> -->
-                </div>
-                <div class="input-box">
-                   <!-- <form class="row g-4" [formGroup]="form" (ngSubmit)="submit();"> -->
-                    <form class="row g-4">
-                      <div class="col-12">
-                         <div class="form-floating theme-form-floating log-in-form">
-                            <input type="email" class="form-control" id="email" formControlName="email" placeholder="{{ 'email_address'  }}" />
-                            <!-- <label for="email">{{ 'email_address' | translate }}</label> -->
-                            <label for="email">{{ 'email_address' }}</label>
-                            <!-- @if(form.controls['email'].touched && form.controls['email'].errors?.['required']){
-                               <div class="invalid-feedback">
-                                  {{ 'email_is_required' | translate }}
-                               </div>
-                            }
- 
-                            @if(form.controls['email'].touched && form.controls['email'].errors?.['email']){
-                               <div class="invalid-feedback">
-                                  {{ 'invalid_email' | translate }}
-                               </div>
-                            } -->
-                         </div>
-                      </div>
-                      <div class="col-12">
-                         <div class="form-floating theme-form-floating log-in-form">
-                            <input type="password" class="form-control" id="password" formControlName="password" placeholder="{{ 'password'  }}" />
-                            <!-- <label for="password">{{ 'password' | translate }}</label> -->
-                            <label for="password">{{ 'password' }}</label>
-                            <!-- @if(form.controls['password'].touched && form.controls['password'].errors?.['required']){
-                               <div class="invalid-feedback">
-                                  {{ 'password_is_required' | translate }}
-                               </div>
-                            } -->
-                         </div>
-                      </div>
-                      <!-- @if(reCaptcha){
-                         <div class="col-12">
-                            <re-captcha formControlName="recaptcha"> </re-captcha>
-                            @if(form.controls['recaptcha']?.touched && form.controls['recaptcha']?.errors?.['required']){
-                               <div
-                                  class="invalid-feedback">
-                                  {{ 're_captcha_is_required' | translate }}
-                               </div>
-                             }
-                         </div>
-                      } -->
-                      <div class="col-12">
-                         <div class="forgot-box">
-                            <!-- <a class="forgot-password" [routerLink]="['/auth/forgot-password']">{{ 'forgot_password' | translate }}?</a> -->
-                            <a class="forgot-password" [routerLink]="['/auth/forgot-password']">{{ 'forgot_password' }}?</a>
-                         </div>
-                      </div>
-                      <div class="col-12">
-                         <!-- <app-button [class]="'btn btn-theme w-100 justify-content-center'" [id]="'login_btn'">
-                            {{ 'log_in' | translate }}
-                         </app-button>
-                         <div class="sign-up-box">
-                            <h4>{{ 'dont_account' | translate }}</h4>
-                            <a [routerLink]="['/auth/register']">{{ 'sign_up' |translate}}</a>
-                         </div> -->
-                         <button class="log-in-btn btn btn-theme w-100 justify-content-center">{{ 'log_in' }}</button>
-                         <div class="sign-up-box">
-                            <h4>{{ 'dont have an account' }}</h4>
-                            <a [routerLink]="['/auth/register']">{{ 'sign_up'}}</a>
-                         </div>
-                      </div>
-                   </form>
-                </div>
-             </div>
-          </div>
-       </div>
-    </div>
- </section>
+   <div class="card">
+      <!-- <app-alert></app-alert> -->
+         <div class="log-in-title">
+            <img src="assets\images\simpliKart.png" class="img-fluid logo-img" alt="">
+            <h4>{{ 'log_in_your_account' | translate  }}</h4>
+         </div>
+         <div class="input-box">
+             <form class="row g-4" [formGroup]="form" (ngSubmit)="onSubmitForm();">
+               <div class="col-12">
+                  <div class="form-floating theme-form-floating log-in-form">
+                     <input type="text" class="form-control" id="email"  placeholder="{{ 'email_address' | translate}}" />
+                     <!-- @if(form.controls['email'].touched && form.controls['email'].errors?.['required']){
+                        <div class="invalid-feedback">
+                           {{ 'email_is_required' | translate }}
+                        </div>
+                     }
+
+                     @if(form.controls['email'].touched && form.controls['email'].errors?.['email']){
+                        <div class="invalid-feedback">
+                           {{ 'invalid_email' | translate }}
+                        </div>
+                     } -->
+                  </div>
+               </div>
+               <div class="col-12">
+                  <div class="form-floating theme-form-floating log-in-form">
+                     <input type="text" class="form-control" id="password"  placeholder="{{ 'password' | translate}}" />
+                     <!-- @if(form.controls['password'].touched && form.controls['password'].errors?.['required']){
+                        <div class="invalid-feedback">
+                           {{ 'password_is_required' | translate }}
+                        </div>
+                     } -->
+                  </div>
+               </div>
+               <!-- @if(reCaptcha){
+                  <div class="col-12">
+                     <re-captcha formControlName="recaptcha"> </re-captcha>
+                     @if(form.controls['recaptcha']?.touched && form.controls['recaptcha']?.errors?.['required']){
+                        <div
+                           class="invalid-feedback">
+                           {{ 're_captcha_is_required' | translate }}
+                        </div>
+                      }
+                  </div>
+               } -->
+               <div class="col-12">
+                  <div class="forgot-box">
+                     <a class="forgot-password" [routerLink]="['/auth/forgot-password']">{{ 'forgot_password'| translate}}?</a>
+                  </div>
+               </div>
+               <div class="col-12">
+                  <!-- <app-button [class]="'btn btn-theme w-100 justify-content-center'" [id]="'login_btn'">
+                     {{ 'log_in' | translate }}
+                  </app-button>
+                  <div class="sign-up-box">
+                     <h4>{{ 'dont_account' | translate }}</h4>
+                     <a [routerLink]="['/auth/register']">{{ 'sign_up' |translate}}</a>
+                  </div> -->
+                  <button class="log-in-btn w-100 justify-content-center">{{'login' | translate}}</button>
+                  <div class="sign-up-box">
+                     <h4>{{ 'dont_account' | translate}}</h4>
+                     <a [routerLink]="['/auth/register']">{{ 'sign_up' | translate }}</a>
+                  </div>
+               </div>
+            </form>
+         </div>
+
+
+   </div>
+ </div>

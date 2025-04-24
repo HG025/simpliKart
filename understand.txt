@@ -4,6 +4,8 @@ npm install @popperjs/core
 
 npm install @ng-bootstrap/ng-bootstrap
 
+npm install @ngx-translate/core @ngx-translate/http-loader
+
 
 
 ng cache clean      ==      for cache cleaning
