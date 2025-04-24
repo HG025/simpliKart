@@ -1,53 +1,75 @@
-html, body {
-  height: 100%;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.log-in-card {
-  margin: 10% 10% 10% 35%;
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
-/* .log-in-section {
+body {
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh; 
-  padding: 2rem 1rem;
-  background-color: #f8f9fa; 
-} */
+  align-items: flex-start;
+  padding-top: 5vh; 
+  background-color: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding-top: 10%;
+}
+
+.textarea {
+  width: 100%;
+}
+
+.insideCardContainer {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* flex: 1 1 250px; */
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
 .log-in-box {
-  margin: 5% 25% 0% 20%;
+  margin: 5% 40% 0% 35%;
   background-color: #ffffff; 
   padding: 03% 2%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  border-radius: 1rem;
-  /* width: 100%; */
  }
-
- .input-box .row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 0;
-}
-
-.theme-form-floating {
-  position: relative;
-}
 
 .log-in-title {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.theme-form-floating input,
-.theme-form-floating textarea {
-  padding: 1rem;
-}
-
-/* .theme-form-floating input {
-  width: 90%;
+.theme-form-floating input {
+  width: 100%;
   padding: 12px 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -56,15 +78,7 @@ html, body {
 
 .theme-form-floating {
   margin-bottom: 20px;
-} */
-
-@media (min-width: 576px) {
-  .input-box .col-sm-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
 }
-
 
 .forgot-box {
   text-align: left;
@@ -104,7 +118,6 @@ html, body {
   text-decoration: underline;
 }
 
-
 .log-in-btn {
   background-color:#ffae00; 
   color: #fff;
@@ -124,4 +137,3 @@ html, body {
   color: black;
   border: black 1px solid;
 }
-
