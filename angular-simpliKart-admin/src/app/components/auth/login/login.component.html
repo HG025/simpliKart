@@ -1,6 +1,4 @@
 <div class="container w-100">
-   <!-- <div class="card" style="visibility: hidden;"> 
-   </div> -->
 
    <div class="card">
       <!-- <app-alert></app-alert> -->
@@ -12,41 +10,29 @@
              <form class="row g-4" [formGroup]="form" (ngSubmit)="onSubmitForm();">
                <div class="col-12">
                   <div class="form-floating theme-form-floating log-in-form">
-                     <input type="text" class="form-control" id="email"  placeholder="{{ 'email_address' | translate}}" />
-                     <!-- @if(form.controls['email'].touched && form.controls['email'].errors?.['required']){
+                     <input type="email" class="form-control" id="email" formControlName="email" placeholder="{{ 'email_address' | translate}}" />
+                     @if(form.controls['email'].touched && form.controls['email'].errors?.['required']){
                         <div class="invalid-feedback">
-                           {{ 'email_is_required' | translate }}
+                           {{'email_is_required' | translate}}
                         </div>
                      }
-
                      @if(form.controls['email'].touched && form.controls['email'].errors?.['email']){
                         <div class="invalid-feedback">
-                           {{ 'invalid_email' | translate }}
+                           {{'invalid_email' | translate}}
                         </div>
-                     } -->
+                     }
                   </div>
                </div>
                <div class="col-12">
                   <div class="form-floating theme-form-floating log-in-form">
-                     <input type="text" class="form-control" id="password"  placeholder="{{ 'password' | translate}}" />
-                     <!-- @if(form.controls['password'].touched && form.controls['password'].errors?.['required']){
+                     <input type="text" class="form-control" formControlName="password" id="password"  placeholder="{{ 'password' | translate}}" />
+                     @if(form.controls['password'].touched && form.controls['password'].errors?.['required']){
                         <div class="invalid-feedback">
-                           {{ 'password_is_required' | translate }}
+                           {{'password_is_required' | translate}}
                         </div>
-                     } -->
+                     }
                   </div>
                </div>
-               <!-- @if(reCaptcha){
-                  <div class="col-12">
-                     <re-captcha formControlName="recaptcha"> </re-captcha>
-                     @if(form.controls['recaptcha']?.touched && form.controls['recaptcha']?.errors?.['required']){
-                        <div
-                           class="invalid-feedback">
-                           {{ 're_captcha_is_required' | translate }}
-                        </div>
-                      }
-                  </div>
-               } -->
                <div class="col-12">
                   <div class="forgot-box">
                      <a class="forgot-password" [routerLink]="['/auth/forgot-password']">{{ 'forgot_password'| translate}}?</a>
@@ -60,7 +46,7 @@
                      <h4>{{ 'dont_account' | translate }}</h4>
                      <a [routerLink]="['/auth/register']">{{ 'sign_up' |translate}}</a>
                   </div> -->
-                  <button class="log-in-btn w-100 justify-content-center">{{'login' | translate}}</button>
+                  <button class="log-in-btn w-100 justify-content-center" >{{'login' | translate}}</button>
                   <div class="sign-up-box">
                      <h4>{{ 'dont_account' | translate}}</h4>
                      <a [routerLink]="['/auth/register']">{{ 'sign_up' | translate }}</a>

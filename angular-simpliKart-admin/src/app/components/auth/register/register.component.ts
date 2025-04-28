@@ -36,4 +36,11 @@ export class RegisterComponent {
 onSubmitForm() {
 }
 
+get passwordMatchError() {
+  return (
+    this.form.getError('mismatch') &&
+    this.form.get('password_confirmation')?.touched
+  );
+}
+
 }

@@ -137,3 +137,10 @@ body {
   color: black;
   border: black 1px solid;
 }
+
+.invalid-feedback {
+  color: #ffae00;
+  padding-top: 5px;
+  display: flex;
+  font-size: 12px;
+}

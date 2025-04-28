@@ -11,19 +11,23 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './update-password.component.css'
 })
 export class UpdatePasswordComponent {
+
   public form!: FormGroup;
+  public show: boolean = false;
 
   constructor (
     public router: Router,
     public formBuilder: FormBuilder
   ){
     this.form = this.formBuilder.group({
-      password: new FormControl('', [Validators.required]),
-      new_password: new FormControl('',[Validators.required]),
-      enter_confirm_password: new FormControl('',[Validators.required])
+      newPassword: new FormControl('',[Validators.required]),
+      confirmPassword: new FormControl('',[Validators.required])
     })
   }
 
+  showPassword() {
+    this.show = !this.show;
+  }
   
 
   onSubmitForm() {}

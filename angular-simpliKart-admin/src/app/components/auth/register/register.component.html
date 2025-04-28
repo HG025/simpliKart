@@ -1,7 +1,4 @@
 <div class="container w-100">
-   <!-- <div class="card" style="visibility: hidden;"> 
-   </div> -->
-
    <div class="card">
       <!-- <app-alert></app-alert> -->
          <div class="log-in-title">
@@ -13,72 +10,77 @@
                <div class="insideCardContainer">
                   <div class="col-6">
                      <div class="form-floating theme-form-floating log-in-form">
-                        <input type="text" class="form-control" id="name"  placeholder="{{ 'name' | translate}}" />
-                        <!-- @if(form.controls['name'].touched && form.controls['name'].errors?.['required']){
-                              <div class="invalid-feedback">
-                                 {{ 'name_is_required' | translate }}
-                              </div>
-                           } -->
-                     </div>
-                  </div>
-                  <div class="col-6">
-                     <div class="form-floating theme-form-floating log-in-form">
-                        <input type="text" class="form-control" id="email"  placeholder="{{ 'email_address' | translate}}" />
-                        <!-- @if(form.controls['email'].touched && form.controls['email'].errors?.['required']){
+                        <input type="text" class="form-control" formControlName="name" id="name"  placeholder="{{ 'name' | translate}}" />
+                        @if(form.controls['name'].touched && form.controls['name'].errors?.['required']){
                            <div class="invalid-feedback">
-                              {{ 'email_is_required' | translate }}
+                              {{'name_is_required' | translate}}
                            </div>
                         }
-   
-                        @if(form.controls['email'].touched && form.controls['email'].errors?.['email']){
+                     </div>
+                  </div>
+                  <div class="col-6">
+                     <div class="form-floating theme-form-floating log-in-form">
+                        <input type="email" class="form-control" formControlName="email" id="email"  placeholder="{{ 'email_address' | translate}}" />
+                        @if(form.controls['email'].touched && form.controls['email'].errors?.['required']) {
                            <div class="invalid-feedback">
-                              {{ 'invalid_email' | translate }}
+                              {{'email_is_required' | translate}}
                            </div>
-                        } -->
+                        }
+                        @if(form.controls['email'].touched && form.controls['email'].errors?.['email']) {
+                           <div class="invalid-feedback">
+                              {{'invalid_email' | translate}}
+                           </div>
+                        }
                      </div>
                   </div>
                </div>
                <div class="insideCardContainer">
                   <div class="col-6">
                      <div class="form-floating theme-form-floating log-in-form">
-                        <input type="text" class="form-control" id="password"  placeholder="{{ 'password' | translate}}" />
-                     <!-- @if(form.controls['password'].touched && form.controls['password'].errors?.['required']){
-                        <div class="invalid-feedback">
-                           {{ 'password_is_required' | translate }}
-                        </div>
-                     } -->
+                        <input type="text" class="form-control" id="password" formControlName="password" placeholder="{{ 'password' | translate}}" />
+                        @if(form.controls['password'].touched && form.controls['password'].errors?.['required']) {
+                           <div class="invalid-feedback">
+                              {{'password_is_required' | translate}}
+                           </div>
+                        }
                      </div>
                   </div>
                   <div class="col-6">
                      <div class="form-floating theme-form-floating log-in-form">
-                        <input type="text" class="form-control" id="confirm_password"  placeholder="{{ 'confirm_password' | translate}}" />
-                     <!-- @if(form.controls['confirm_password'].touched && form.controls['confirm_password'].errors?.['required']){
-                        <div class="invalid-feedback">
-                           {{ 'password_is_required' | translate }}
-                        </div>
-                     } -->
-                     </div>
-                  </div>
-               </div>
-               <div class="insideCardContainer">
-                  <div class="col-6">
-                     <div class="form-floating theme-form-floating log-in-form">
-                        <input type="text" class="form-control" id="store_name"  placeholder="{{ 'store_name' | translate}}" />
-                        <!-- @if(form.controls['store_name'].touched && form.controls['store_name'].errors?.['required']){
+                        <input type="text" class="form-control" id="confirm_password" formControlName="confirm_password" placeholder="{{ 'confirm_password' | translate}}" />
+                        @if(form.controls['confirm_password'].touched && form.controls['confirm_password'].errors?.['required']) {
+                           <div class="invalid-feedback">
+                              {{'confirm_password_is_required' | translate}}
+                           </div>
+                        }@else {
+                           @if (passwordMatchError) {
                               <div class="invalid-feedback">
-                                 {{ 'store_name_is_required' | translate }}
+                                 {{'confirm_password_does_not_matched' | translate}}
                               </div>
-                           } -->
+                           }
+                        }
+                     </div>
+                  </div>
+               </div>
+               <div class="insideCardContainer">
+                  <div class="col-6">
+                     <div class="form-floating theme-form-floating log-in-form">
+                        <input type="text" class="form-control" id="store_name" formControlName="store_name" placeholder="{{ 'store_name' | translate}}" />
+                        @if(form.controls['store_name'].touched && form.controls['store_name'].errors?.['required']) {
+                           <div class="invalid-feedback">
+                              {{'store_name_is_required' | translate}}
+                           </div>
+                        }
                      </div>
                   </div>
                   <div class="col-6">
                      <div class="form-floating theme-form-floating log-in-form">
                         <input type="text" class="form-control" id="store_description" formControlName="description" placeholder="{{ 'store_description' | translate }}">
-                        <!-- @if(form.controls['description'].touched && form.controls['description'].errors?.['required']){
-                              <div class="invalid-feedback">
-                                 {{ 'description_is_required' | translate }}
-                              </div>
-                           } -->
+                        @if(form.controls['description'].touched && form.controls['description'].errors?.['required']) {
+                           <div class="invalid-feedback">
+                              {{'description_is_required' | translate}}
+                           </div>
+                        }
                      </div>
                   </div>
                </div>
@@ -116,11 +118,11 @@
                   <div class="col-sm-4">
                      <div class="form-floating theme-form-floating log-in-form">
                         <input type="text" class="form-control" id="city" formControlName="city" placeholder="{{ 'city' | translate }}">
-                        <!-- @if(form.controls['city'].touched && form.controls['city'].errors?.['required']){
+                        @if(form.controls['city'].touched && form.controls['city'].errors?.['required']) {
                            <div class="invalid-feedback">
-                              {{ 'city_is_required' | translate }}
+                              {{'city_is_required' | translate}}
                            </div>
-                        } -->
+                        }
                      </div>
                   </div>
                </div>
@@ -128,11 +130,11 @@
                   <div class="col-12">
                      <div class="form-floating theme-form-floating log-in-form">
                         <input type="text" class="form-control" id="address" formControlName="address" placeholder="{{ 'address' | translate }}">
-                        <!--  @if(form.controls['address'].touched && form.controls['address'].errors?.['required']){
-                              <div class="invalid-feedback">
-                                 {{ 'address_is_required' | translate }}
-                              </div>
-                           } -->
+                        @if(form.controls['address'].touched && form.controls['address'].errors?.['required']) {
+                           <div class="invalid-feedback">
+                              {{"address_is_required" | translate}}
+                           </div>
+                        }
                      </div>
                   </div>
 
@@ -140,11 +142,11 @@
                      <div class="col-6">
                         <div class="form-floating theme-form-floating log-in-form">
                            <input type="text" class="form-control" id="pincode" formControlName="pincode" placeholder="{{ 'pincode' | translate }}">
-                           <!--@if(form.controls['pincode'].touched && form.controls['pincode'].errors?.['required']){
+                           @if(form.controls['pincode'].touched && form.controls['pincode'].errors?.['required']) {
                               <div class="invalid-feedback">
-                                 {{ 'pincode_is_required' | translate }}
+                                 {{'pincode_is_required' | translate}}
                               </div>
-                           } -->
+                           }
                         </div>
                      </div>
                      <div class="col-6">
@@ -161,17 +163,16 @@
                            </select2> -->
                            <!-- <input type="number" class="form-control intl-input-padding" formControlName="phone" placeholder="{{ 'enter_phone' | translate }}" name="phone"> -->
                            <input type="number" class="form-control" formControlName="phone" placeholder="{{ 'enter_phone' | translate }}" >
-                           <!--@if(form.controls['phone'].touched && form.controls['phone'].errors?.['required']){
-                              <div class="invalid-feedback" autocomplete="false">
-                                 {{ 'phone_number_is_required' | translate }}
+                           @if(form.controls['phone'].touched && form.controls['phone'].errors?.['required']){
+                              <div class="invalid-feedback">
+                                 {{'phone_number_is_required' | translate}}
                               </div>
                            }
-
-                           @if(form.controls['phone'].touched && form.controls['phone'].errors?.['pattern']){
+                           @if(form.controls['phone'].touched && form.controls['phone'].errors?.['pattern']) {
                               <div class="invalid-feedback">
-                                 {{ 'phone_number_is_invalid' | translate }}
+                                 {{'phone_number_is_invalid' | translate}}
                               </div>
-                           } -->
+                           }
                         </div>
                      </div>
                   </div>
